@@ -1,0 +1,35 @@
+@charest "UTF-8";
+@import "./common";
+.m-index{
+	@include flexbox();
+	@include flex-direction(column);
+	height: 100%;
+	header{
+		height: .44rem;
+		background: pink;
+		line-height: .44rem;
+		ul{
+			@include flexbox();
+			li:first-child,
+			li:last-child{
+				width:.44rem;
+				height: 100%;
+				text-align: center;
+			}
+			li:nth-child(2){
+				@include flex();
+				justify-content: center;
+				text-align: center;
+			}
+		}
+	}
+	section{
+		background: gray;
+		@include flex();
+		width: 100%;
+	}
+	footer{
+		height: .44rem;
+		background: red;
+	}
+}
