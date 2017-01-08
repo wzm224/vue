@@ -1,0 +1,35 @@
+<div class="classpage" id="classpage">
+	<nav>
+		<ul>
+			<li v-on:click="navclass(index)" :class="{ClassActive:index == ClassIndex}"  v-for="(item,index) in ClassNav">{{item}}</li>
+		</ul>
+	</nav>
+
+	<section>
+
+        <div id="class-scroll">
+          <div>
+
+            <div class="head">
+              <img src="/images/img/test/arrow.png" width="40" height="40"/>
+              <span>下拉刷新...</span>
+            </div>
+
+				<ul>
+					<li v-for="item in Classlist">
+						<img :src="item.ImgSrc" alt="">
+						<p>{{item.title}}</p>
+					</li>
+				</ul>
+
+            <div class="foot">
+              <img src="/images/img/test/arrow.png" width="40" height="40"/>
+              <span>上拉加载更多...</span>
+            </div>
+
+          </div>
+
+        </div>
+
+	</section>
+</div>

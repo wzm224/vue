@@ -1,0 +1,53 @@
+
+<div class="detail" id="detail">
+	<header>
+		<ul>
+			<li><img src="images/img/test/back.png" alt=""></li>
+			<li><input type="text"><span class="yo-ico">&#xe600;</span></li>
+			<li>筛选</li>
+		</ul>
+	</header>
+	<nav>
+		<ul>
+			<li v-on:click="navbtn(i)" :class="{navat:navbtnindex==i}" v-for="(item,i) in nav">{{item}}</li>
+		</ul>
+	</nav>
+
+	<section>
+
+		<div id="detail-scroll">
+          <div>
+
+            <div class="head">
+              <img src="/images/img/test/arrow.png" width="40" height="40"/>
+              <span></span>
+            </div>
+				
+				<dl v-for="item in detaillist">
+					<dt><img :src="item.ImgSrc" alt=""></dt>
+					<dd>
+						<p>{{item.title}}</p>
+						<p>
+						<i>¥&nbsp{{item.price}}</i>
+						<b>({{item.oldprice}})</b>
+						</p>
+						<p>
+						<span><i class="yo-ico">&#xe637;</i>{{item.discussnum}}</span>
+						<span><i class="yo-ico">&#xe6eb;</i>{{item.consultnum}}</span>
+						</p>				
+					</dd>
+				</dl>
+
+            <div class="foot">
+              <img src="/images/img/test/arrow.png" width="40" height="40"/>
+              <span></span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+	</section>
+</div>
+

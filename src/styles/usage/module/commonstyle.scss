@@ -1,0 +1,72 @@
+@charest "UTF-8";
+@import "./common";
+.L-commonstyle{
+
+	@include flexbox();
+	@include flex-direction(column);
+	height: 100%;
+	background: $base-color;
+
+	header{
+		height: .47rem;
+		background: #cf1b1c;
+		line-height: .47rem;
+		color: #fffcfe;
+		ul{
+			@include flexbox();
+			font-size: .25rem;
+			li:first-child,
+			a{
+				color: #fdfdfd;
+			}			
+			li:last-child{
+				width:.65rem;
+				height: 100%;
+				text-align: center;
+			}
+			li:nth-child(2){
+				@include flex();
+				justify-content: center;
+				text-align: center;
+				font-weight: bold;
+			}
+		}
+	}
+	section{
+		@include flex();
+		width: 100%;
+		overflow: hidden;
+	}
+	footer{
+		background: #333;
+		ul{	
+			height: .5rem;
+			color: #fdfdfd;
+			@include flexbox();	
+			li{
+				@include flex();
+				text-align: center;
+				a{
+					color: #fdfdfd;
+				}
+				span{
+					display:inline-block;
+					i{	
+						font-size:.25rem;
+						line-height: .32rem;
+					}
+					b{	
+						display:block;
+						font-size: .12rem;
+						line-height: .12rem;
+						font-weight: normal;
+					}
+				}
+			}	
+		}
+	}
+}
+
+.NavActive{
+	background: #ed3938;
+}

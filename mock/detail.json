@@ -1,0 +1,106 @@
+[
+
+	{
+		"name":"销量",
+		"list":[		
+ 			{
+				"ImgSrc":"/images/img/detail/detail-1.jpg",
+				"title":"MIZUNO美津浓跑鞋 (JSSF154663) wave rider 男款跑鞋 紫色",
+				"price":"555",
+				"oldprice":"666",
+				"discussnum":"55",
+				"consultnum":"5"
+			},{
+				"ImgSrc":"/images/img/detail/detail-1.jpg",
+				"title":"MIZUNO美津浓跑鞋 (JSSF154663) wave rider 男款跑鞋 紫色",
+				"price":"555",
+				"oldprice":"666",
+				"discussnum":"55",
+				"consultnum":"5"
+			},{
+				"ImgSrc":"/images/img/detail/detail-1.jpg",
+				"title":"MIZUNO美津浓跑鞋 (JSSF154663) wave rider 男款跑鞋 紫色",
+				"price":"555",
+				"oldprice":"666",
+				"discussnum":"55",
+				"consultnum":"5"
+			},{
+				"ImgSrc":"/images/img/detail/detail-1.jpg",
+				"title":"MIZUNO美津浓跑鞋 (JSSF154663) wave rider 男款跑鞋 紫色",
+				"price":"555",
+				"oldprice":"666",
+				"discussnum":"55",
+				"consultnum":"5"
+			}
+		]
+	},
+
+	{
+		"name":"价格",
+		"list":[		
+ 			{
+				"ImgSrc":"/images/img/detail/detail-2.jpg",
+				"title":"MIZUNO美津浓跑鞋 (JSSF154663) wave rider 男款跑鞋 紫色",
+				"price":"666",
+				"oldprice":"777",
+				"discussnum":"66",
+				"consultnum":"6"
+			},{
+				"ImgSrc":"/images/img/detail/detail-2.jpg",
+				"title":"MIZUNO美津浓跑鞋 (JSSF154663) wave rider 男款跑鞋 紫色",
+				"price":"666",
+				"oldprice":"777",
+				"discussnum":"66",
+				"consultnum":"6"
+			},{
+				"ImgSrc":"/images/img/detail/detail-2.jpg",
+				"title":"MIZUNO美津浓跑鞋 (JSSF154663) wave rider 男款跑鞋 紫色",
+				"price":"666",
+				"oldprice":"777",
+				"discussnum":"66",
+				"consultnum":"6"
+			},{
+				"ImgSrc":"/images/img/detail/detail-2.jpg",
+				"title":"MIZUNO美津浓跑鞋 (JSSF154663) wave rider 男款跑鞋 紫色",
+				"price":"666",
+				"oldprice":"777",
+				"discussnum":"66",
+				"consultnum":"6"
+			}
+		]
+	},
+	{
+		"name":"上架时间",
+		"list":[		
+ 			{
+				"ImgSrc":"/images/img/detail/detail-3.jpg",
+				"title":"MIZUNO美津浓跑鞋 (JSSF154663) wave rider 男款跑鞋 紫色",
+				"price":"777",
+				"oldprice":"888",
+				"discussnum":"77",
+				"consultnum":"7"
+			},{
+				"ImgSrc":"/images/img/detail/detail-3.jpg",
+				"title":"MIZUNO美津浓跑鞋 (JSSF154663) wave rider 男款跑鞋 紫色",
+				"price":"777",
+				"oldprice":"888",
+				"discussnum":"77",
+				"consultnum":"7"
+			},{
+				"ImgSrc":"/images/img/detail/detail-3.jpg",
+				"title":"MIZUNO美津浓跑鞋 (JSSF154663) wave rider 男款跑鞋 紫色",
+				"price":"777",
+				"oldprice":"888",
+				"discussnum":"77",
+				"consultnum":"7"
+			},{
+				"ImgSrc":"/images/img/detail/detail-3.jpg",
+				"title":"MIZUNO美津浓跑鞋 (JSSF154663) wave rider 男款跑鞋 紫色",
+				"price":"777",
+				"oldprice":"888",
+				"discussnum":"77",
+				"consultnum":"7"
+			}
+		]
+	}
+]

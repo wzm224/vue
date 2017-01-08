@@ -1,10 +1,16 @@
-$base-color: #0dc441;
+$base-color: #fff;
+
+
 
 @font-face {
   font-family: "yofont";
-  src: url('/images/fonts/iconfont.eot?t=1482995686824'); /* IE9*/
-  src: url('/images/fonts/iconfont.eot?t=1482995686824#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('/images/fonts/iconfont.woff?t=1482995686824') format('woff'), /* chrome, firefox */
-  url('/images/fonts/iconfont.ttf?t=1482995686824') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('/images/fonts/iconfont.svg?t=1482995686824#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('/images/fonts/iconfont.eot');
+  src: url('/images/fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('/images/fonts/iconfont.woff') format('woff'),
+  url('/images/fonts/iconfont.ttf') format('truetype'),
+  url('/images/fonts/iconfont.svg#iconfont') format('svg');
+}
+
+#app{
+	height:100%;
 }
