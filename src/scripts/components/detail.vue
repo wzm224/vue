@@ -78,7 +78,7 @@ module.exports = {
 	},
 	mounted:function (){
 
-		fetch('/api/detail').then(response => response.json())
+		fetch('./mock/detail.json').then(response => response.json())
   		.then(res => {
   			this.detaillist=res[this.navbtnindex].list
   			//console.log(this.listIndex)
@@ -117,13 +117,13 @@ module.exports = {
 	                myScroll.scrollTo(0, -scrollHeight);
 	                head.removeClass('up');
 	            } else if (this.y >= 0) {
-	                head.attr('src', '/images/img/test/ajax-loader.gif');
+	                head.attr('src', './images/img/test/ajax-loader.gif');
 	                //TODO ajax下拉刷新数据
 
 	                setTimeout(function () {
 	                    myScroll.scrollTo(0, -scrollHeight);
 	                    head.removeClass('up');
-	                    head.attr('src', '/images/img/test/arrow.png');
+	                    head.attr('src', './images/img/test/arrow.png');
 	                }, 100);
 	            }
 
@@ -133,11 +133,11 @@ module.exports = {
 	                myScroll.scrollTo(0, self.maxScrollY + scrollHeight);
 	                foot.removeClass('down')
 	            } else if (maxY >= 0) {
-	                foot.attr('src', '/images/img/test/ajax-loader.gif');
+	                foot.attr('src', './images/img/test/ajax-loader.gif');
 	                //TODO ajax上拉加载数据
 	                var self = this;
 
-	                fetch('/api/detail')
+	                fetch('./mock/detail.json')
 	                .then(response => response.json())
 	                .then(res => {
 	                  //console.log(that.Classlist)
@@ -148,7 +148,7 @@ module.exports = {
 
 	                  myScroll.scrollTo(0, self.y + scrollHeight);
 	                  foot.removeClass('down');
-	                  foot.attr('src', '/images/img/test/arrow.png');
+	                  foot.attr('src', './images/img/test/arrow.png');
 	                })
 	            }
 	        })

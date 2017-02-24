@@ -66,11 +66,15 @@
 	
 	var _kefu2 = _interopRequireDefault(_kefu);
 	
+	var _detail = __webpack_require__(13);
+	
+	var _detail2 = _interopRequireDefault(_detail);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(13);
+	__webpack_require__(16);
 	
-	var common = __webpack_require__(17);
+	var common = __webpack_require__(20);
 	
 	/*var index = require('./scripts/tpls/commonstyle.html')
 	var lists = require('./scripts/tpls/list.html')
@@ -85,7 +89,7 @@
 	
 	//console.log(VueRouter)
 	
-	var layout = __webpack_require__(18);
+	var layout = __webpack_require__(21);
 	
 	common.render(layout);
 	
@@ -93,7 +97,7 @@
 	    path: '/',
 	    component: _common2.default,
 	    children: [{
-	        path: '/home',
+	        path: '/',
 	        component: _home2.default
 	    }, {
 	        path: '/list',
@@ -101,10 +105,13 @@
 	    }, {
 	        path: '/my',
 	        component: _my2.default
-	    }, {
-	        path: '/kefu',
-	        component: _kefu2.default
 	    }]
+	}, {
+	    path: '/kefu',
+	    component: _kefu2.default
+	}, {
+	    path: '/detail',
+	    component: _detail2.default
 	}];
 	
 	var router = new VueRouter({
@@ -185,7 +192,7 @@
 	module.exports = {
 	  data: function () {
 	    return {
-	
+	      navindex: 0,
 	      nav: [{
 	        title: "首页",
 	        icon: "&#xe629;",
@@ -193,7 +200,7 @@
 	      }, {
 	        title: "分类",
 	        icon: "&#xe612;",
-	        routes: "/class"
+	        routes: "/list"
 	      }, {
 	        title: "我的",
 	        icon: "&#x3575;",
@@ -223,7 +230,11 @@
 	    attrs: {
 	      "id": "commonstyle"
 	    }
-	  }, [_c('header', [_c('ul', [_c('router-link', [_c('li', {
+	  }, [_c('header', [_c('ul', [_c('router-link', {
+	    attrs: {
+	      "to": "/list"
+	    }
+	  }, [_c('li', {
 	    staticClass: "yo-ico"
 	  }, [_vm._v("")])]), _vm._v(" "), _c('li', [_vm._v("\r\n          优个网\r\n      ")]), _vm._v(" "), _c('li', {
 	    staticClass: "yo-ico"
@@ -358,6 +369,8 @@
 	//
 	//
 	//
+	//
+	//
 	
 	module.exports = {
 		data: function () {
@@ -377,7 +390,7 @@
 				var Indexs = index;
 				//console.log(Indexs);
 	
-				fetch('/api/list').then(response => response.json()).then(res => {
+				fetch('./mock/list.json').then(response => response.json()).then(res => {
 					//console.log(this)
 					var that = this;
 					that.Classlist = res[Indexs].list;
@@ -416,13 +429,13 @@
 								myScroll.scrollTo(0, -scrollHeight);
 								head.removeClass('up');
 							} else if (this.y >= 0) {
-								head.attr('src', '/images/img/test/ajax-loader.gif');
+								head.attr('src', 'images/img/test/ajax-loader.gif');
 								//TODO ajax下拉刷新数据
 	
 								setTimeout(function () {
 									myScroll.scrollTo(0, -scrollHeight);
 									head.removeClass('up');
-									head.attr('src', '/images/img/test/arrow.png');
+									head.attr('src', 'images/img/test/arrow.png');
 								}, 100);
 							}
 	
@@ -432,11 +445,11 @@
 								myScroll.scrollTo(0, self.maxScrollY + scrollHeight);
 								foot.removeClass('down');
 							} else if (maxY >= 0) {
-								foot.attr('src', '/images/img/test/ajax-loader.gif');
+								foot.attr('src', 'images/img/test/ajax-loader.gif');
 								//TODO ajax上拉加载数据
 								var self = this;
 	
-								fetch('/api/more').then(response => response.json()).then(res => {
+								fetch('./mock/more.json').then(response => response.json()).then(res => {
 									//console.log(that.Classlist)
 									//console.log(res[Indexs])
 	
@@ -446,7 +459,7 @@
 	
 									myScroll.scrollTo(0, self.y + scrollHeight);
 									foot.removeClass('down');
-									foot.attr('src', '/images/img/test/arrow.png');
+									foot.attr('src', 'images/img/test/arrow.png');
 								});
 							}
 						});
@@ -458,7 +471,7 @@
 	
 			var that = this;
 	
-			fetch('/api/list').then(response => response.json()).then(res => {
+			fetch('./mock/list.json').then(response => response.json()).then(res => {
 				this.Classlist = res[this.listIndex].list;
 				//console.log(this.listIndex)
 	
@@ -495,13 +508,13 @@
 							myScroll.scrollTo(0, -scrollHeight);
 							head.removeClass('up');
 						} else if (this.y >= 0) {
-							head.attr('src', '/images/img/test/ajax-loader.gif');
+							head.attr('src', 'images/img/test/ajax-loader.gif');
 							//TODO ajax下拉刷新数据
 	
 							setTimeout(function () {
 								myScroll.scrollTo(0, -scrollHeight);
 								head.removeClass('up');
-								head.attr('src', '/images/img/test/arrow.png');
+								head.attr('src', 'images/img/test/arrow.png');
 							}, 100);
 						}
 	
@@ -511,11 +524,11 @@
 							myScroll.scrollTo(0, self.maxScrollY + scrollHeight);
 							foot.removeClass('down');
 						} else if (maxY >= 0) {
-							foot.attr('src', '/images/img/test/ajax-loader.gif');
+							foot.attr('src', 'images/img/test/ajax-loader.gif');
 							//TODO ajax上拉加载数据
 							var self = this;
 	
-							fetch('/api/more').then(response => response.json()).then(res => {
+							fetch('./mock/more.json').then(response => response.json()).then(res => {
 								//console.log(that.Classlist)
 								//console.log(res[that.listIndex])
 	
@@ -525,7 +538,7 @@
 	
 								myScroll.scrollTo(0, self.y + scrollHeight);
 								foot.removeClass('down');
-								foot.attr('src', '/images/img/test/arrow.png');
+								foot.attr('src', 'images/img/test/arrow.png');
 							});
 						}
 					});
@@ -560,19 +573,23 @@
 	      "id": "class-scroll"
 	    }
 	  }, [_c('div', [_vm._m(0), _vm._v(" "), _c('ul', _vm._l((_vm.Classlist), function(item) {
-	    return _c('li', [_c('img', {
+	    return _c('li', [_c('router-link', {
+	      attrs: {
+	        "to": "/detail"
+	      }
+	    }, [_c('img', {
 	      attrs: {
 	        "src": item.ImgSrc,
 	        "alt": ""
 	      }
-	    }), _vm._v(" "), _c('p', [_vm._v(_vm._s(item.title))])])
+	    }), _vm._v(" "), _c('p', [_vm._v(_vm._s(item.title))])])], 1)
 	  })), _vm._v(" "), _vm._m(1)])])])])
 	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticClass: "head"
 	  }, [_c('img', {
 	    attrs: {
-	      "src": "/images/img/test/arrow.png",
+	      "src": "images/img/test/arrow.png",
 	      "width": "40",
 	      "height": "40"
 	    }
@@ -582,7 +599,7 @@
 	    staticClass: "foot"
 	  }, [_c('img', {
 	    attrs: {
-	      "src": "/images/img/test/arrow.png",
+	      "src": "images/img/test/arrow.png",
 	      "width": "40",
 	      "height": "40"
 	    }
@@ -658,20 +675,282 @@
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticClass: "L-fefu"
-	  }, [_vm._v("\r\n\t客服\r\n")])
+	  }, [_c('router-link', {
+	    attrs: {
+	      "to": '/'
+	    }
+	  }, [_vm._v("\r\n\t\t返回\r\n\t")]), _vm._v(" "), _c('p', [_vm._v("客服")])], 1)
 	},staticRenderFns: []}
 
 /***/ },
 /* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
+	
+	/* script */
+	__vue_exports__ = __webpack_require__(14)
+	
+	/* template */
+	var __vue_template__ = __webpack_require__(15)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	
+	module.exports = __vue_exports__
+
+
+/***/ },
+/* 14 */
+/***/ function(module, exports) {
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	
+	module.exports = {
+		data: function () {
+			return {
+				navbtnindex: 0,
+				nav: ["销量", "价格", "上架时间"],
+				detaillist: []
+			};
+		},
+	
+		methods: {
+			navbtn: function (i) {
+				this.navbtnindex = i;
+			}
+		},
+		mounted: function () {
+	
+			fetch('./mock/detail.json').then(response => response.json()).then(res => {
+				this.detaillist = res[this.navbtnindex].list;
+				//console.log(this.listIndex)
+	
+	
+				setTimeout(function () {
+					var myScroll = new IScroll('#detail-scroll', {
+						probeType: 3,
+						mouseWheel: true
+					});
+	
+					var scrollHeight = 35;
+	
+					myScroll.scrollBy(0, -scrollHeight);
+	
+					var head = $('.head img'),
+					    topImgHasClass = head.hasClass('up');
+					var foot = $('.foot img'),
+					    bottomImgHasClass = head.hasClass('down');
+					myScroll.on('scroll', function () {
+						var y = this.y,
+						    maxY = this.maxScrollY - y;
+						if (y >= 0) {
+							!topImgHasClass && head.addClass('up');
+							return '';
+						}
+						if (maxY >= 0) {
+							!bottomImgHasClass && foot.addClass('down');
+							return '';
+						}
+					});
+	
+					myScroll.on('scrollEnd', function () {
+						if (this.y >= -scrollHeight && this.y < 0) {
+							myScroll.scrollTo(0, -scrollHeight);
+							head.removeClass('up');
+						} else if (this.y >= 0) {
+							head.attr('src', './images/img/test/ajax-loader.gif');
+							//TODO ajax下拉刷新数据
+	
+							setTimeout(function () {
+								myScroll.scrollTo(0, -scrollHeight);
+								head.removeClass('up');
+								head.attr('src', './images/img/test/arrow.png');
+							}, 100);
+						}
+	
+						var maxY = this.maxScrollY - this.y;
+						if (maxY > -scrollHeight && maxY < 0) {
+							var self = this;
+							myScroll.scrollTo(0, self.maxScrollY + scrollHeight);
+							foot.removeClass('down');
+						} else if (maxY >= 0) {
+							foot.attr('src', './images/img/test/ajax-loader.gif');
+							//TODO ajax上拉加载数据
+							var self = this;
+	
+							fetch('./mock/detail.json').then(response => response.json()).then(res => {
+								//console.log(that.Classlist)
+								//console.log(res[Indexs])
+								that.detaillist = that.detaillist.concat(res[that.navbtnindex].list);
+	
+								myScroll.refresh();
+	
+								myScroll.scrollTo(0, self.y + scrollHeight);
+								foot.removeClass('down');
+								foot.attr('src', './images/img/test/arrow.png');
+							});
+						}
+					});
+				}, 1000);
+			}).catch(e => console.log("Oops, error", e));
+		}
+	
+	};
+
+/***/ },
+/* 15 */
+/***/ function(module, exports) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "L-detail",
+	    attrs: {
+	      "id": "detail"
+	    }
+	  }, [_c('header', [_c('ul', [_c('li', [_c('router-link', {
+	    attrs: {
+	      "to": '/list'
+	    }
+	  }, [_c('span', {
+	    staticClass: "yo-ico"
+	  }, [_vm._v("")])])], 1), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('li', [_vm._v("筛选")])])]), _vm._v(" "), _c('nav', [_c('ul', _vm._l((_vm.nav), function(item, i) {
+	    return _c('li', {
+	      class: {
+	        navat: _vm.navbtnindex == i
+	      },
+	      on: {
+	        "click": function($event) {
+	          _vm.navbtn(i)
+	        }
+	      }
+	    }, [_vm._v(_vm._s(item))])
+	  }))]), _vm._v(" "), _c('section', [_c('div', {
+	    attrs: {
+	      "id": "detail-scroll"
+	    }
+	  }, [_c('div', [_vm._m(1), _vm._v(" "), _vm._l((_vm.detaillist), function(item) {
+	    return _c('dl', [_c('dt', [_c('img', {
+	      attrs: {
+	        "src": item.ImgSrc,
+	        "alt": ""
+	      }
+	    })]), _vm._v(" "), _c('dd', [_c('p', [_vm._v(_vm._s(item.title))]), _vm._v(" "), _c('p', [_c('i', [_vm._v("¥ " + _vm._s(item.price))]), _vm._v(" "), _c('b', [_vm._v("(" + _vm._s(item.oldprice) + ")")])]), _vm._v(" "), _c('p', [_c('span', [_c('i', {
+	      staticClass: "yo-ico"
+	    }, [_vm._v("")]), _vm._v(_vm._s(item.discussnum) + "s")]), _vm._v(" "), _c('span', [_c('i', {
+	      staticClass: "yo-ico"
+	    }, [_vm._v("")]), _vm._v(_vm._s(item.consultnum))])])])])
+	  }), _vm._v(" "), _vm._m(2)], 2)])])])
+	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('li', [_c('input', {
+	    attrs: {
+	      "type": "text"
+	    }
+	  }), _c('span', {
+	    staticClass: "yo-ico"
+	  }, [_vm._v("")])])
+	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "head"
+	  }, [_c('img', {
+	    attrs: {
+	      "src": "/images/img/test/arrow.png",
+	      "width": "40",
+	      "height": "40"
+	    }
+	  }), _vm._v(" "), _c('span')])
+	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "foot"
+	  }, [_c('img', {
+	    attrs: {
+	      "src": "/images/img/test/arrow.png",
+	      "width": "40",
+	      "height": "40"
+	    }
+	  }), _vm._v(" "), _c('span')])
+	}]}
+
+/***/ },
+/* 16 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -685,7 +964,7 @@
 	module.exports = common;
 
 /***/ },
-/* 18 */
+/* 21 */
 /***/ function(module, exports) {
 
 	module.exports = "<div id=\"app\">	<router-view></router-view>  </div>"
